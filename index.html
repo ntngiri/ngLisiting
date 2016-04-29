@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="listingDemo">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ng-listing</title>
+
+<script src="j/angular.min.js"></script>
+<script src="j/main.js"></script>
+<script src="j/data1.js"></script>
+<script src="j/controllers/listController.js"></script>
+<script src="j/filters/listFilters.js"></script>
+<script src="j/directives/listDirective_v2.js"></script>
+
+
+</head>
+
+<body>
+Write some text in textbox:
+	<div id="content" ng-controller="listCtrl">
+        <!-- <listing tuple-count={{listingOpt.tupelCount}} max-height={{listingOpt.maxHeight}} selected-id ="selectedId" listing-callback="onClickFunc(item)" data="data" multi-select=true>
+        </listing> -->
+<input ng-model="xxx">
+        <listing tuple-count="10" multi-select="true" selected-id ="selectedId" listing-callback="onClickFunc(item)" data="data" filter-name="xxx" callback-ref="onClickFunc"><div><span>{{data.name}}</span></div></listing>    
+        {{selectedId| json}}
+		<button ng-click="changeData()">change data</button>
+	</div>
+
+</body>
+</html>
